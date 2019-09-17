@@ -118,7 +118,7 @@ public String IpnodoNombre(String Nombrenodo){
      
         String Nombre_Componente=me.getComponent().getName();
         
-        String mensaje= this.IpnodoNombre(Nombre_Componente);
+        String mensaje="La ip es:"+ this.IpnodoNombre(Nombre_Componente);
     
 JOptionPane.showMessageDialog(null, mensaje);       
         

@@ -321,7 +321,7 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
   i.setText(nombre);
   i.setName(nombre);
   i.setSize(200,33);
-  i.setLocation(lado, 20);
+  i.setLocation(20, lado);
   i.setFocusable(false);
          lienzo.add(i);
          lienzo.repaint();
@@ -394,7 +394,7 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
             tiempo=resultado.getInt("Tiempo");
             this.crearnodo(n, ip,l,tiempo,true);
             
-            l+=213;
+            l+=50;
             }
         
             
