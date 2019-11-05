@@ -5,6 +5,8 @@
  */
 package m;
 
+import Fuentes.fuente;
+import Movimientos.movimiento;
 import java.awt.Color;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -35,7 +37,7 @@ private ResultSet resultado;
 
 //CONSTRUCTOR
 public MapaU() {
-        fuente.conectorBD();
+        fuente.ConectorBD();
       
         initComponents();
         this.setTitle("Maker");

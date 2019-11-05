@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package m;
+package Movimientos;
 
+import Fuentes.fuente;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
@@ -24,6 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import m.MapaU;
 
 /**
  * CLASE DE MOVIMIENTO DE LOS BOTONES
@@ -51,13 +53,13 @@ private ResultSet resultado;
    * CONSTRUCTOR DE LA CLASE MOVIMIENTO TIENE COMO PARAMETRO EL BOTON AL CUAL SE LE VAN A ASIGNAR DICHOS EVENTOS
    * @param u 
    */
-    movimiento(JButton u){
+   public movimiento(JButton u){
     
 this.i=u;
     
     }
     
-    movimiento(){
+   public movimiento(){
     
 
     
@@ -76,7 +78,7 @@ private  int verdad;
 public String IpnodoNombre(String Nombrenodo){
     
       try {
-     fuente.conectorBD();
+     fuente.ConectorBD();
             estatuto = fuente.conecta.createStatement();
             resultado = estatuto.executeQuery("SELECT * FROM Nodos");        // TODO add your handling code here:
             String ip;

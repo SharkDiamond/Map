@@ -5,6 +5,8 @@
  */
 package m;
 
+import Fuentes.fuente;
+import Movimientos.movimiento;
 import java.awt.Color;
 import java.awt.Component;
 import java.sql.Connection;
@@ -37,7 +39,7 @@ private ResultSet resultado;
      * Constructor unico y principal
      */
     public Interfaz() {
-            fuente.conectorBD();
+            fuente.ConectorBD();
       
         initComponents();
           this.setTitle("Maker Mapa");
@@ -425,6 +427,8 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -463,6 +467,24 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
             }
         });
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setForeground(new java.awt.Color(0, 252, 102));
+        jMenu3.setText("Host Ip");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setForeground(new java.awt.Color(0, 252, 102));
+        jMenu4.setText("Nodo Aparte");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -509,6 +531,23 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
 // TODO add your handling code here:
     }//GEN-LAST:event_jMenu2MouseClicked
 
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+       saberiponombre np=new saberiponombre();
+       np.setVisible(true);
+    }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+
+        
+        String Nombre=JOptionPane.showInputDialog(evt);
+        
+        
+        String ip=JOptionPane.showInputDialog(evt);
+        
+        
+        Nodo nps=new Nodo(Nombre,ip);   
+    }//GEN-LAST:event_jMenu4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -548,6 +587,8 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JPanel lienzo;
     // End of variables declaration//GEN-END:variables

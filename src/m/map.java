@@ -5,6 +5,7 @@
  */
 package m;
 
+import Fuentes.fuente;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -41,7 +42,7 @@ public class map extends javax.swing.JFrame {
          public void run() {
               try {
             obj.iplocal();
-            obj.p();
+            obj.ippublica();
         
            
         } catch (IOException ex) {

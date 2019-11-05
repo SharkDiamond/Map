@@ -21,8 +21,9 @@ public class saberiponombre extends javax.swing.JFrame {
      */
     public saberiponombre() {
         initComponents();
-      
-        this.setTitle("");
+    
+        this.setTitle("Traductor");
+        this.setLocationRelativeTo(null);
     }
 
     /**

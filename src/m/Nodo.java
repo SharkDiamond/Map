@@ -5,6 +5,7 @@
  */
 package m;
 
+import Fuentes.fuente;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +33,7 @@ public class Nodo extends javax.swing.JFrame {
          this.setTitle(this.nombre_nodo);
         this.nodo.setText(this.nombre_nodo);
         this.nodo.setFocusable(false);
-        fuente.t(ip, this.nodo, 1000, this.contador_up, this.contador_down);
+      //  fuente.t(ip, this.nodo, 1000, this.contador_up, this.contador_down);
     }
     
     

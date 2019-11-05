@@ -1,5 +1,5 @@
 
-package m;
+package Fuentes;
 
 
 import java.awt.Color;
@@ -30,6 +30,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import m.saberiponombre;
 
 //import static monitor.map.Obtener_Ip;
 //import static monitor.map.local;
@@ -46,7 +47,7 @@ import javax.swing.JTextField;
 
 
 
-public class fuente {
+public class fuente implements FuncionalidadFuente{
     
   
     public Connection conecta=null;
@@ -57,17 +58,10 @@ public class fuente {
     DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
     String fh=hourdateFormat.format(f);
     saberiponombre z=new saberiponombre();
-    
-    
-    
- /**
-  * METODO PARA HACER LA CONECCION CON AL BASE DE DATOS
-  */
-    
-      
-    protected void conectorBD(){
-    
-     
+
+    @Override
+    public void ConectorBD() {
+       
         try {
             
             
@@ -93,22 +87,12 @@ public class fuente {
               Logger.getLogger(fuente.class.getName()).log(Level.SEVERE, null, ex);
           }
         
-        
     }
-    
-    
-    
-    
+
+    @Override
+    public void pingazo(String ip, JButton boton, String nombre_del_nodo) {
        
-    /**
-     * Metodo que hace ping
-     * @param ip
-     * @param boton
-     * @param nombre_del_nodo 
-     */
-    
-    public void pingazo(String ip, JButton boton,String nombre_del_nodo){
-      while(condition){
+          while(condition){
           
    
           try{
@@ -164,13 +148,10 @@ public class fuente {
     
     
     }
-    
-    /**
-     * Metodo que retorna tu ip address local
-     * @throws UnknownHostException 
-     */
+
+    @Override
     public void iplocal() throws UnknownHostException {
-  
+     
         //Creando un objeto de la clase inetAdress
         InetAddress a= InetAddress.getByName("");
     try{
@@ -192,17 +173,11 @@ public class fuente {
         }
        
        
-        
-        
+    }
+
+    @Override
+    public void ippublica() throws IOException {
    
-         }//Cierre del metodo iplocal
-    
-    /**
-     * METODO QUE SIRVE PARA OBTENER TU IP ADDRESS PUBLICA
-     * @throws IOException 
-     */
-   public void p() throws IOException{
-    
     try {
 
             URL whatismyip = new URL("http://checkip.amazonaws.com");
@@ -230,34 +205,11 @@ public class fuente {
         */
 
     }
-    
-   
-       }
-  //clave y contraseña
-    
-   public void traductor(JTextField dato_introducido, JTextField dato_mostrado) throws UnknownHostException{
+    }
 
-   
-    
-       
-       
-       
-   
-   }
-   
-  
-   /**
-    * Metodo que sirve para un solo nodo cuando se crea es decir le hace ping a ese nodo.
-    * @param ip
-    * @param vertice
-    * @param tiempo 
-    */
-     int caido=0;
- int arriba=0;
-
-     public void t(String ip, JButton vertice, int tiempo, JLabel... mostrar){
-    
-     Timer t=new Timer();
+    @Override
+    public void t(String ip, JButton vertice, int tiempo) {
+    Timer t=new Timer();
 
     
     TimerTask s=new TimerTask() {
@@ -267,7 +219,7 @@ public class fuente {
                
          
         
-      while(condition){
+      while(true){
           
        
           try{
@@ -282,8 +234,7 @@ public class fuente {
                  
                   // JOptionPane.showMessageDialog(null, "collores Up");
                   vertice.setBackground(Color.GREEN);
-          arriba++;
-            mostrar[0].setText(""+arriba);
+          
    
           
           break; 
@@ -293,8 +244,7 @@ public class fuente {
              if(a.isReachable(1000)==false){
                
                       vertice.setBackground(Color.red);
-                caido++;
-            mostrar[1].setText(""+caido);
+           
    
   
           //  JOptionPane.showMessageDialog(null, "collores Down");
@@ -314,9 +264,6 @@ public class fuente {
     }
     
     
-    
-    
-    
       
     }
     
@@ -327,9 +274,10 @@ public class fuente {
             }
         };
  t.schedule(s, 0, tiempo);
+    
+    
     }
     
     
-  
-   
+    
 }//metodo de la clase fuente...
