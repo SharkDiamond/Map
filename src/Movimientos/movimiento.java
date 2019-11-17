@@ -80,7 +80,7 @@ public String IpnodoNombre(String Nombrenodo){
       try {
      fuente.ConectorBD();
             estatuto = fuente.conecta.createStatement();
-            resultado = estatuto.executeQuery("SELECT * FROM Nodos");        // TODO add your handling code here:
+            resultado = estatuto.executeQuery("SELECT * FROM Nodos");  // TODO add your handling code here:
             String ip;
          
    

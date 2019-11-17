@@ -8,6 +8,7 @@ package Fuentes;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -55,12 +56,10 @@ public interface FuncionalidadFuente {
        public void t(String ip, JButton vertice, int tiempo);
      
      
-     
-     
-     
-     
-     
-     
+       
+       public void NodoAparte(String ip, JButton vertice, int tiempo, JLabel primero, JLabel segundo);
+       
+       
      
     
 }

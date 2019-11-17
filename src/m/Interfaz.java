@@ -469,6 +469,7 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
         jMenuBar1.add(jMenu2);
 
         jMenu3.setForeground(new java.awt.Color(0, 252, 102));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/traducir.png"))); // NOI18N
         jMenu3.setText("Host Ip");
         jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -478,6 +479,7 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
         jMenuBar1.add(jMenu3);
 
         jMenu4.setForeground(new java.awt.Color(0, 252, 102));
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/red(1).png"))); // NOI18N
         jMenu4.setText("Nodo Aparte");
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -539,10 +541,10 @@ public void InsertaBD(String Nombre,String Ip,int tiempo){
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
 
         
-        String Nombre=JOptionPane.showInputDialog(evt);
+        String Nombre=JOptionPane.showInputDialog("Por Favor Introduzca El Nombre:");
         
         
-        String ip=JOptionPane.showInputDialog(evt);
+        String ip=JOptionPane.showInputDialog("Por Favor Introduzca La Ip:");
         
         
         Nodo nps=new Nodo(Nombre,ip);   

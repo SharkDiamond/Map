@@ -277,6 +277,85 @@ public class fuente implements FuncionalidadFuente{
     
     
     }
+
+    @Override
+    public void NodoAparte(String ip, JButton vertice, int tiempo, JLabel primero, JLabel segundo) {
+
+ 
+    
+    Timer t=new Timer();
+
+    TimerTask s=new TimerTask() {
+ int contadorUp=0;
+          
+         int contadorDown=0;
+            @Override
+            public void run() {
+               
+         
+        
+      while(true){
+          
+       
+          try{
+        
+              InetAddress a=InetAddress.getByName(ip);
+       
+              
+               System.out.println(a.isReachable(1000));
+              
+              if(a.isReachable(1000)==true){
+                  
+                 
+                  // JOptionPane.showMessageDialog(null, "collores Up");
+                  vertice.setBackground(Color.GREEN);
+      contadorUp++;
+      
+      primero.setText(""+contadorUp);
+      
+          break; 
+         
+              }
+              
+             if(a.isReachable(1000)==false){
+               
+                      vertice.setBackground(Color.red);
+           contadorDown++;
+           
+           
+           segundo.setText(""+contadorDown);
+              
+        break;
+              }
+              
+              
+             
+       }//llave del try
+       
+          
+    catch(Exception e)   {
+    
+    
+    }
+    
+    
+      
+    }
+    
+    
+         
+                
+                
+            }
+        };
+ t.schedule(s, 0, tiempo);
+    
+    
+    
+    
+    
+    
+    }
     
     
     
