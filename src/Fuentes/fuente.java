@@ -67,7 +67,7 @@ public class fuente implements FuncionalidadFuente{
             
             Class.forName("com.mysql.jdbc.Driver");
             //SE CAMBIO LA DIRECCION
-             conecta=DriverManager.getConnection("jdbc:mysql://localhost:3306/Torres","root","iveth2020");
+             conecta=DriverManager.getConnection("jdbc:mysql://localhost:3306/Torres","root","");
             
              
              
